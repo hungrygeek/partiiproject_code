@@ -1,0 +1,219 @@
+datatype 'a seq = Cons of 'a * (unit -> 'a seq);
+datatype exreal = R of int * int seq;
+
+fun head (Cons(x,_)) = x;
+fun tail (Cons(_,xf)) =xf();
+
+fun zeros () = Cons(0,fn ()=>zeros ());
+fun ones () = Cons(1,fn ()=>ones ());
+fun mones () = Cons(~1,fn ()=>mones ());
+
+
+
+fun ll2r _ 0 _ = 0.0
+|	ll2r (Cons(x,xq)) n i = (Real.fromInt(x)/(Math.pow(2.0,i))) + (ll2r (xq()) (n-1) (i+1.0));
+
+fun exr2r (R(i,f)) n = Real.fromInt(i)+(ll2r f n 1.0);
+
+fun r2ll x 0 i = zeros()
+| 	r2ll x n i = if Real.signBit(x - 1.0/Math.pow(2.0,i)) then Cons(0,fn ()=> r2ll x (n-1) (i+1.0))
+				else Cons(1, fn ()=> r2ll (x- 1.0/Math.pow(2.0,i)) (n-1) (i+1.0)); 
+
+fun r2exr r n = (R(floor r, r2ll (r - Real.fromInt(floor r)) (n) (1.0)));
+
+
+
+
+fun take (0, xq) = []
+  | take (n, Cons(x,xf)) = x :: take (n-1, xf());
+
+
+fun nlength [] = 0
+  | nlength (x::xs) = 1 + nlength xs;
+
+fun frac2list_1 (0, xq) = []
+  | frac2list_1 (n, Cons(x,xf)) = x :: frac2list_1 (n-1, xf());
+
+fun frac2list x = frac2list_1(~1,x); 
+
+
+fun eval_result x = if (take(2,x) =[1,2] orelse take(2,x)=[~1,~2]) then Cons(0, fn()=>eval_result(Cons(0,fn ()=>tail(tail(x))))) 
+					else if (take(3,x)=[1,1,1] orelse take(3,x)=[1,1,2]) then eval_result(Cons(0, fn()=>Cons(~1,fn ()=>tail(tail(x)))))
+					else if (take(3,x)=[~1,~1,~1] orelse take(3,x)=[~1,~1,~2]) then eval_result(Cons(0, fn()=>Cons(1,fn ()=>tail(tail(x)))))
+					else if (take(3,x)=[1,1,0] orelse (take(3,x)=[1,1,~1] orelse take(3,x)=[1,1,~2])) then Cons(1, fn()=>eval_result(Cons(1,fn ()=>tail(tail(x)))))
+					else if (take(3,x)=[~1,~1,0] orelse (take(3,x)=[~1,~1,1] orelse take(3,x)=[~1,~1,2])) then Cons(~1, fn()=>eval_result(Cons(~1,fn ()=>tail(tail(x)))))
+					else if (take(3,x)=[1,~1,~1] orelse take(3,x)=[1,~1,~2]) then Cons(0, fn()=>eval_result(Cons(1,fn ()=>tail(tail(x)))))
+					else if (take(3,x)=[1,~1,0] orelse (take(3,x)=[1,~1,1] orelse take(3,x)=[1,~1,2])) then Cons(1, fn()=>eval_result (Cons(~1,fn ()=>tail(tail(x)))))
+					else if take(2,x) = [1,~2] then Cons(0, fn()=>eval_result (Cons(0,fn ()=>tail(tail(x)))))
+					else if take(2,x) = [1,0] then Cons(1, fn()=>eval_result (Cons(0,fn ()=>tail(tail(x)))))
+					else if take(2,x) = [0,2] then Cons(1, fn()=>eval_result(Cons(0,fn ()=>tail(tail(x)))))
+					else if take(2,x) = [0,~2] then Cons(~1, fn()=>eval_result(Cons(0,fn ()=>tail(tail(x)))))
+					else if take(2,x) = [0,0] then Cons(0, fn()=>eval_result(Cons(0,fn ()=>tail(tail(x)))))
+					else if (take(3,x) = [0,1,2] orelse take(3,x)=[0,1,1]) then Cons(1, fn()=>eval_result(Cons(~1,fn ()=>tail(tail(x)))))
+					else if (take(3,x) = [0,1,~2] orelse (take(3,x)=[0,1,~1] orelse take(3,x)=[0,1,0])) then Cons(0, fn()=>eval_result(Cons(1,fn ()=>tail(tail(x)))))
+					else if (take(3,x) = [0,~1,~2] orelse take(3,x)=[0,~1,~1]) then Cons(~1, fn()=>eval_result(Cons(1,fn ()=>tail(tail(x)))))
+					else if (take(3,x) = [0,~1,2] orelse (take(3,x)=[0,~1,1] orelse take(3,x)=[0,~1,0])) then Cons(0, fn()=>eval_result(Cons(~1,fn ()=>tail(tail(x)))))
+					else if (take(3,x)=[~1,1,1] orelse take(3,x)=[~1,1,2]) then Cons(0, fn()=>eval_result(Cons(~1,fn ()=>tail(tail(x)))))
+					else if (take(3,x)=[~1,1,0] orelse (take(3,x)=[~1,1,~1] orelse take(3,x)=[~1,1,~2])) then Cons(1, fn()=>eval_result (Cons(~1,fn ()=>tail(tail(x)))))
+					else if take(2,x) = [~1,0] then Cons(~1, fn()=>eval_result (Cons(0,fn ()=>tail(tail(x)))))
+					else if take(2,x) = [~1,2] then Cons(0, fn()=>eval_result (Cons(0,fn ()=>tail(tail(x))))) else eval_result(Cons(0,fn()=>tail(x)));      
+
+
+fun first_var (x,y) = x;
+fun sec_var (x,y) = y;
+fun frac_sum1 (Cons(x,xq),Cons(y,yq)) = Cons(x+y,fn ()=>(frac_sum1(xq(),yq())));
+fun rplus (R(x1,y1)) (R(x2,y2)) = let val temp = frac_sum1(y1,y2) in 
+										if head(temp) = 2 orelse (take(2,temp)=[1,2] orelse (take(3,temp)=[1,1,1] orelse take(3,temp)=[1,1,2])) then (R(x1+x2+1,eval_result (temp)))
+										else if head(temp) = ~2 orelse (take(2,temp)=[~1,~2] orelse (take(3,temp)=[~1,~1,~1] orelse take(3,temp)=[~1,~1,~2])) then (R(x1+x2-1,eval_result (temp)))
+										else (R(x1+x2,eval_result(temp)))
+									end; 
+
+fun multplus ([x]) = x
+|	multplus (x::xs) = rplus (x) (multplus xs); 
+
+
+
+
+
+
+fun frac_sum x y = let val temp = frac_sum1(x,y) in 
+										if head(temp) = 2 orelse (take(2,temp)=[1,2] orelse (take(3,temp)=[1,1,1] orelse take(3,temp)=[1,1,2])) then (1,eval_result (temp))
+										else if head(temp) = ~2 orelse (take(2,temp)=[~1,~2] orelse (take(3,temp)=[~1,~1,~1] orelse take(3,temp)=[~1,~1,~2])) then (~1,eval_result (temp))
+										else (0,eval_result(temp))
+									end;
+
+
+fun list_frac_plus ([x]) = x
+|	list_frac_plus (x::xs) = sec_var( frac_sum (x) (list_frac_plus xs));
+
+(*fun inf_plus x = sec_var(frac_sum (x) (inf_plus tail(x)) ); *)
+
+
+
+fun revApp ([], ys) = ys
+| revApp (x::xs, ys) = revApp (xs, x::ys);
+
+fun tobinary n =
+let
+  fun tb' 0   acc = acc
+    | tb' num acc = tb' (num div 2) (num mod 2 :: acc)
+in
+  tb' n []
+end;
+
+fun todecimal1 [] acc = 0
+|	todecimal1 (x::xs) acc = x*acc + (todecimal1 xs acc*2);
+
+fun todecimal x = todecimal1 (revApp (x,[])) 1;
+
+
+fun split ([], _) = (0,[0])
+|	split ([x], a) = (x,a)
+|	split ((x::xs), y) = split(xs, y@[x]);
+
+
+fun minus_f (Cons(x,xf)) = Cons(~1*x, fn ()=> (minus_f (xf())));
+
+fun r_minus (R(i,f)) = (R(~1*i,(minus_f (f))));
+
+fun get 1 x =head(x)
+|	get k x = get (k-1) (tail(x));
+
+
+
+fun addz 0 x 0 = zeros()
+|	addz 0 x 1 = x
+|	addz 0 x (~1) = minus_f(x)
+|	addz n x z = Cons(0,fn ()=> addz (n-1) x z);
+
+fun addele x (Cons(0,yq)) n = Cons((addz n x 0), fn ()=> (addele x (yq()) (n+1))) 
+|	addele x (Cons(1,yq)) n = Cons((addz n x 1), fn ()=> (addele x (yq()) (n+1))) 
+|	addele x (Cons(~1,yq)) n = Cons((addz n x ~1), fn ()=> (addele x (yq()) (n+1)));
+
+
+
+
+fun mult_frac_aux1 k x =
+	let val temp = list_frac_plus(take(3,x)) in 
+		(get k temp, Cons(temp,fn()=> tail(tail(tail(x)))))
+	end;
+
+
+
+
+
+
+fun mult_frac_aux2 x k = 
+	let val temp = mult_frac_aux1 k x in
+		Cons(first_var(temp), fn ()=> (mult_frac_aux2 (sec_var(temp)) (k+1)))
+	end;
+
+fun mult_frac x y = mult_frac_aux2 (addele x y 1) 1;
+
+
+	
+(*
+fun mult_frac (Cons(0,xq)) y = Cons(0, fn ()=> (mult_frac (xq()) y))
+|	mult_frac (Cons(1,xq)) y = sec_var(frac_sum y (Cons(0, fn ()=> (mult_frac (xq()) y))))
+|	mult_frac (Cons(~1,xq)) y = sec_var(frac_sum (minus_f(y)) (Cons(0, fn ()=> (mult_frac (xq()) y))));
+
+
+
+
+
+
+
+
+
+fun mult_frac_aux (x) (Cons(0,yq)) = mult_frac_aux (Cons(0,fn ()=>x)) (yq())
+|	mult_frac_aux (x) (Cons(1,yq)) = 
+	let val temp1 = (mult_frac_aux (x) (Cons(0,yq)) in
+		let val temp2 = frac_sum (x) (sec_var(temp1)) in
+			((first_var(temp1) + first_var(temp2),sec_var(frac_sum (x) (sec_var(temp2)))))
+		end
+	end
+|	mult_frac_aux (x) (Cons(~1,yq)) = (first_var(mult_frac_aux (x) (Cons(0,yq))) + first_var(frac_sum (minus_f(x)) (sec_var((mult_frac_aux (x) (Cons(0,yq)))))),sec_var(frac_sum (minus_f(x)) (sec_var((mult_frac_aux (x) (Cons(0,yq)))))));
+
+fun mult_frac x y = 
+	let val temp = (mult_frac_aux (x) (y)) in
+		(R(first_var(temp), sec_var(temp)));
+
+
+*)
+
+
+
+
+
+
+fun tailn 0 x = x
+|	tailn n x = tailn (n-1) (tail(x));
+
+fun list_exr ([]) (y) (n) (res) = res
+|	list_exr (1::x) y n res = list_exr x y (n+1) ((R(todecimal(take(n,y)),(tailn n y)))::res)
+|	list_exr (0::x) y n res = list_exr x y (n+1) res;   
+
+
+fun mult_frac_int x y = let val temp = revApp(tobinary x,[]) in
+									multplus (list_exr temp y 0 [])
+						end;
+
+fun rmult (R(i1,f1)) (R(i2,f2)) = rplus (R(i1*i2, mult_frac (f1) (f2))) (rplus (mult_frac_int i1 (f2)) (mult_frac_int i2 (f1)));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

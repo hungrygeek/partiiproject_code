@@ -1,0 +1,103 @@
+datatype 'a cptset = cpt of (('a opens) opens);
+
+fun sierp_c (Sierp(Cons(true,xq))) = (Sierp(Cons(false,fn ()=>sierp_extract_seq (sierp_c(Sierp(xq()))))))
+|	sierp_c (Sierp(Cons(false,xq))) = (Sierp(Cons(true,fn ()=>sierp_extract_seq (sierp_c(Sierp(xq()))))));
+
+fun complementc (cfc(x)) = (cfo(x));
+
+fun complemento (cfo(x)) = (cfc(x));
+
+fun cfc_union_cpt (f) (cpt(cfo(x : (('a opens)->Sierpinski)))) = (cpt(cfo(fn a => (x (opens_union (complementc(f)) a)))));
+
+exception Do_not_Look;
+
+fun handle_aux x = if head(sierp_extract_seq(x())) = true then (Sierp(c_true())) 
+					else ((Sierp(Cons(false,fn ()=>sierp_extract_seq(handle_aux (fn()=>(Sierp(tail(sierp_extract_seq (x()))))))))) handle Do_not_Look => (Sierp(c_false())));
+
+
+
+fun auxf f = (fn x => (f x handle Do_not_Look=> (Sierp(c_false()))));
+
+
+
+
+fun handle_aux f x = if head(f x)=true then (Sierp(c_true()))
+					else (Sierp(Cons(false,fn ()=>sierp_extract_seq(handle_aux f (Sierp(xq())))))) handle Do_not_Look => (Sierp(c_false()));
+
+
+fun handle_aux x = if head(sierp_extract_seq x)=true then (Sierp(c_true()))
+					else ((Sierp(Cons(false,fn ()=> (sierp_extract_seq((handle_aux (Sierp(tail(sierp_extract_seq(x)))))) handle Do_not_Look => (c_false())))     )) );
+
+
+
+
+
+
+
+fun interleave (Cons(x,xf), yq) =
+        Cons(x, fn()=> interleave(yq, xf()));
+
+fun multiappend [] = []
+|	multiappend (x::xs) = x@(multiappend xs);
+
+fun disguise_aux (x::xs) = Cons(x,fn ()=> disguise_aux xs)
+|	disguise_aux [] = raise Do_not_Look;
+
+fun disguise (pref_r(x,xs)) = (R(x,(disguise_aux(xs))));
+
+fun generate_dis (pref_r(x,xs)) = [disguise(pref_r(x,xs@[1])), disguise(pref_r(x,xs@[0])), disguise(pref_r(x,xs@[~1]))];
+fun generate_pref (pref_r(x,xs)) = [(pref_r(x,xs@[1])),(pref_r(x,xs@[0])),(pref_r(x,xs@[~1]))];
+
+fun dis_seq (x) = Cons((map disguise (x)) , fn ()=> dis_seq (multiappend (map generate_pref (x))));
+
+val pr = dis_seq([(pref_r(0,[0])),(pref_r(0,[1])),(pref_r(0,[~1]))]);
+
+fun aux_f f = (fn x =>(handle_aux (f x)));
+
+fun compact_aux f x = Cons((handle_aux (sierp_and_ls (map (auxf f) (head(x))))), fn () => (compact_aux f (tail(x))));
+
+
+sierp_and_ls (map handle_aux (map f head(x)))
+
+
+
+
+fun compact f x = multi_sierp_or (compact_aux f x);
+
+fun eval_sierp_aux _ 0 = false 
+|	eval_sierp_aux (Cons(true,xq)) n = true
+|	eval_sierp_aux (Cons(false,xq)) n = eval_sierp_aux (xq()) (n-1);
+
+
+fun eval_sierp x n = eval_sierp_aux (sierp_extract_seq(x)) n;
+
+fun getf (cfo(f)) = f;
+
+
+cfc_union_cpt (cfc(fn x => notEqual (rplus x x) (R(1,(zeros()))))) 
+
+val unitint = (cpt(cfo(fn f => compact (getf f) pr)));
+
+
+
+
+
+
+
+fun compact_aux f x = Cons(handle_aux(sierp_and_ls (map f (head(x)))), fn () => (compact_aux f (tail(x))));
+
+
+
+
+
+
+
+
+compact (notEqual (R(0,Cons(1,fn ()=>(zeros()))))) pr
+
+
+
+handle_aux (notEqual (disguise (pref_r(0,[1,1,0,1,0]))) (disguise (pref_r(0,[1,1,0,1,0]))))
+
+
+

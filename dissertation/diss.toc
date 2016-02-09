@@ -1,0 +1,63 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Motivation}{1}
+\contentsline {section}{\numberline {1.2}Related Work}{1}
+\contentsline {subsection}{\numberline {1.2.1}Exact Real Arithmetic Systems Competition}{1}
+\contentsline {subsection}{\numberline {1.2.2}iRRAM}{2}
+\contentsline {subsection}{\numberline {1.2.3}Different focus of this project}{2}
+\contentsline {section}{\numberline {1.3}Project Goals}{3}
+\contentsline {chapter}{\numberline {2}Preparation}{5}
+\contentsline {section}{\numberline {2.1}Choice of Real Representation}{5}
+\contentsline {subsection}{\numberline {2.1.1}Real Representation and real number function}{5}
+\contentsline {subsection}{\numberline {2.1.2}Sequence of Interval Representation}{6}
+\contentsline {subsection}{\numberline {2.1.3}Cauchy Representation}{7}
+\contentsline {subsection}{\numberline {2.1.4}Signed Digit Representation}{7}
+\contentsline {section}{\numberline {2.2}Sierpinski Space}{8}
+\contentsline {section}{\numberline {2.3}Topology}{9}
+\contentsline {subsection}{\numberline {2.3.1}Open Sets}{9}
+\contentsline {subsection}{\numberline {2.3.2}Closed Sets}{9}
+\contentsline {subsection}{\numberline {2.3.3}Compact Sets}{9}
+\contentsline {section}{\numberline {2.4}Admissibility}{11}
+\contentsline {section}{\numberline {2.5}Software Development Approach}{12}
+\contentsline {subsection}{\numberline {2.5.1}Development Environment}{12}
+\contentsline {subsection}{\numberline {2.5.2}Programming Language and Software}{12}
+\contentsline {subsection}{\numberline {2.5.3}Back Up}{12}
+\contentsline {subsection}{\numberline {2.5.4}Extendability of the code}{12}
+\contentsline {chapter}{\numberline {3}Implementation}{13}
+\contentsline {section}{\numberline {3.1}Real Representation}{13}
+\contentsline {subsection}{\numberline {3.1.1}Exreal Datatype}{13}
+\contentsline {subsection}{\numberline {3.1.2}Conversion Between real and Exreal}{13}
+\contentsline {subsection}{\numberline {3.1.3}Addition}{14}
+\contentsline {subsection}{\numberline {3.1.4}Multiplication}{17}
+\contentsline {section}{\numberline {3.2}Sierpinski Space}{18}
+\contentsline {section}{\numberline {3.3}Open and Closed set on Exreal}{20}
+\contentsline {section}{\numberline {3.4}Inequality and relational operator}{21}
+\contentsline {subsection}{\numberline {3.4.1}notEqual}{21}
+\contentsline {subsection}{\numberline {3.4.2}isPositive}{22}
+\contentsline {section}{\numberline {3.5}Real Interval}{22}
+\contentsline {section}{\numberline {3.6}Disguised Exreal}{23}
+\contentsline {subsection}{\numberline {3.6.1}Prefix Real}{23}
+\contentsline {subsection}{\numberline {3.6.2}Disguised Exreal}{24}
+\contentsline {section}{\numberline {3.7}Compact set on Exreal}{24}
+\contentsline {section}{\numberline {3.8}Inverse function Calculator for Exreal}{27}
+\contentsline {subsection}{\numberline {3.8.1}Admissibility of Exreal}{27}
+\contentsline {subsection}{\numberline {3.8.2}Inverse function calculator}{28}
+\contentsline {chapter}{\numberline {4}Evaluation}{31}
+\contentsline {section}{\numberline {4.1}The Timer Structure in SML}{31}
+\contentsline {section}{\numberline {4.2}Complexity Analysis of Arithmetic on Exreals}{32}
+\contentsline {subsection}{\numberline {4.2.1}Addition}{32}
+\contentsline {subsection}{\numberline {4.2.2}Multiplication}{33}
+\contentsline {section}{\numberline {4.3}Sierpinski Space and complexity}{34}
+\contentsline {subsection}{\numberline {4.3.1}Sierpinski Space Complexity}{34}
+\contentsline {subsection}{\numberline {4.3.2}Inverse function calculator performance}{35}
+\contentsline {section}{\numberline {4.4}Functionality}{36}
+\contentsline {chapter}{\numberline {5}Conclusion}{38}
+\contentsline {section}{\numberline {5.1}Lessons Learned}{38}
+\contentsline {section}{\numberline {5.2}Future Work}{38}
+\contentsline {chapter}{Bibliography}{41}
+\contentsline {chapter}{\numberline {A}Key Source Code}{43}
+\contentsline {section}{\numberline {A.1}Exreal Datatype}{43}
+\contentsline {section}{\numberline {A.2}Sierpinski Space}{46}
+\contentsline {section}{\numberline {A.3}Open/Closed Set}{47}
+\contentsline {section}{\numberline {A.4}Compactness}{49}
+\contentsline {section}{\numberline {A.5}Admissibility}{52}
+\contentsline {chapter}{\numberline {B}Project Proposal}{55}

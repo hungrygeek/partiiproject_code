@@ -1,0 +1,35 @@
+Phase 1 Project Selection Status Report
+
+Name:   Shi Shu                                                         
+
+College: Fitzwilliam College                                                  
+
+User Identifier:  ss2099                                               
+
+Director of Studies:   Dr. Robert Harle                                         
+
+Please complete 1, 2 and 3 below.
+
+1. Please write 100 words on your current project ideas.
+
+One can prove that under boundedness conditions, unique smooth solutions of partial differential equations are computable from the parameters.(http://arxiv.org/pdf/1204.3763v2.pdf) Even though the algorithm is inefficient. However, in numerical research specialized algorithms are written for specific differential equations (which can take months), and then run only a few times. Thus, there is a large degree of tolerance for inefficiency before the abstract algorithm would become useless. 
+Goal of the project is to implement the abstract algorithm to solve partial differential equations by implementing the idea of exact real number and represented space in ML. 
+We can then implement the algorithm with C++ using iRRAM(the exaxt arithmatic package in C++) to compare the effiency both in terms of time and memory with the ML implementation. 
+
+2. Please list names of potential project supervisors.
+
+Dr. Arno Pauly 
+
+3. Is there any chance that your project will involve any
+computing resources other than the Computing Service's MCS and
+software that is already installed there, for example: your own
+machine, machines in College, special peripherals, imported
+software packages, special hardware, network access, substantial
+extra disc space on the MCS.
+
+If so indicate below what, and what it is needed for.
+
+
+my own machine for coding - late 2013 Macbook pro
+backup options - dropbox, google drive
+version control - Github

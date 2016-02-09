@@ -1,0 +1,109 @@
+datatype 'a seq = Nil
+				| Cons of 'a * (unit -> 'a seq);
+
+fun head (Cons(x,_)) = x;
+fun tail (Cons(_,xf)) =xf();
+
+datatype exreal = R of int * int seq;
+val a = R(11,Cons(1,(fn ()=>Cons(0,fn ()=>Nil))));
+
+fun nlength [] = 0
+  | nlength (x::xs) = 1 + nlength xs;
+
+fun frac2list_1 (0, xq) = []
+  | frac2list_1 (n, Nil) = []
+  | frac2list_1 (n, Cons(x,xf)) = x :: frac2list_1 (n-1, xf());
+
+fun frac2list x = frac2list_1(~1,x); 
+
+
+fun npower(x,n) =
+    if n=0 then 1
+    else x * npower(x, n-1);
+
+fun get_int_part_1 ([]) _ = 0
+	| get_int_part_1 (x::xs) n = x * npower(2,n-1) + (get_int_part_1 xs (n-1));
+
+fun get_intpart x = get_int_part_1 x (nlength x);
+
+fun frac2dec_1 [] (_) = 0.0
+	| frac2dec_1 (x::xs) n = real(x) / real(npower(2,n)) + (frac2dec_1 xs (n+1));
+
+fun frac2dec x = frac2dec_1 (frac2list(x)) (1);
+
+
+fun eval (R(x:int list,y: int seq)) precision = Int.toString(x) ^ "." ^ Int.toString(Real.trunc((frac2dec y) * real(npower(10,precision))));
+
+
+
+fun rplus R(x1, Cons(y1,fn ()=>Nil)) R(x2,Cons(y2,fn ()=>Nil)) = 
+
+fun poss_carry (1,1) = [1]
+	| poss_carry (1,0) = [1,0] 
+	| poss_carry (1,~1) = [0]
+	| poss_carry (0,1) = [1,0]
+	| poss_carry (0,0) = [0]
+	| poss_carry (0,~1) = [0,~1]
+	| poss_carry (~1,1) = [0]
+	| poss_carry (~1,0) = [0,~1]
+	| poss_carry (~1,~1) = [~1];       
+
+
+fun lazy_bincarry (0,xs) = xs
+	| lazy_bincarry (1,Nil) = Cons(1,fn ()=>Nil)
+	| lazy_bincarry (1,Cons(x,xq)) = Cons((1-x),fn ()=>lazy_bincarry(x,xq()));
+
+fun first_var (x,y) = x;
+fun sec_var (x,y) = y;
+
+
+fun frac_sum1 (Cons(x,xq),Cons(y,yq)) = Cons(x+y,fn ()=>(frac_sum1(xq(),yq())));
+|	frac_sum1 (x,Nil) = x;
+|	frac_sum1 (Nil,y) = y;
+
+
+fun frac_sum2 (Cons(2,xq)) = (1,Cons(0+first_var(frac_sum2(xq())), fn ()=>sec_var(frac_sum2(xq()))))
+|	frac_sum2 (Cons(1,xq)) = if head(xq()) =1 then (1,Cons(~1+first_var(frac_sum2(xq())), fn ()=>sec_var(frac_sum2(xq()))))
+							else if head(xq()) = 2 then (1,Cons(~1+first_var(frac_sum2(xq())), fn ()=>sec_var(frac_sum2(xq()))))
+								else (0,Cons(1+first_var(frac_sum2(xq())), fn ()=>sec_var(frac_sum2(xq()))))
+
+|   frac_sum2 (Cons(0,xq)) = (0,Cons(0+first_var(frac_sum2(xq())), fn ()=>sec_var(frac_sum2(xq()))))
+|	frac_sum2 (Cons(~1,xq)) = if head(xq()) = ~1 then (~1,Cons(1+first_var(frac_sum2(xq())), fn ()=>sec_var(frac_sum2(xq()))))
+							else if head(xq()) = ~2 then (~1,Cons(1+first_var(frac_sum2(xq())), fn ()=>sec_var(frac_sum2(xq()))))
+								else (0,Cons(1+first_var(frac_sum2(xq())), fn ()=>sec_var(frac_sum2(xq()))))
+|	frac_sum2 (Cons(~2,xq)) = (1,Cons(0+first_var(frac_sum2(xq())), fn ()=>sec_var(frac_sum2(xq()))));
+
+
+
+fun frac_sum x y = frac_sum2(frac_sum1(x,y));
+
+(*cannot unify int seq with int seq*)
+fun rplus ((R(x1, y1)),(R(x2,y2))) = R(x1+x2+first_var(frac_sum y1 y2),sec_var(frac_sum y1 y2));
+
+
+
+
+
+
+
+
+
+
+
+
+fun bincarry (0,xs) = xs
+	| bincarry (1,[]) = [1]
+	| bincarry (1, x::xs) = (1-x) :: bincarry(x,xs);
+
+
+fun binplus (c,[],ys) = bincarry (c,ys)
+	| binplus (c,xs,[]) = bincarry (c,xs)
+	| binplus (c,x::xs,y::ys) = ((c+x+y) mod 2) :: binplus ((c+x+y) div 2,xs,ys);
+
+fun r_plusint (x,y) = rev(binplus(0,rev(x),rev(y)));
+
+fun binmult ([], _) = []
+	| binmult (0::xs, ys) = 0::binmult(xs,ys)
+	| binmult (1::xs, ys) = binplus(0,ys,binmult(0::xs,ys))
+
+fun r_multint (x,y) = rev(binmult(rev(x),rev(y)));

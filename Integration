@@ -1,0 +1,56 @@
+(* Integration *)
+
+(* Lower Reals , which is a open subset of exreal , which is from (minus infinity,x) *)
+
+
+(* disguise real included *)
+
+exception Do_not_Look;
+
+fun interleave (Cons(x,xf), yq) =
+        Cons(x, fn()=> interleave(yq, xf()));
+
+fun multiappend [] = []
+|	multiappend (x::xs) = x@(multiappend xs);
+
+fun disguise_aux (x::xs) = Cons(x,fn ()=> disguise_aux xs)
+|	disguise_aux [] = raise Do_not_Look;
+
+fun disguise (pref_r(x,xs)) = (R(x,(disguise_aux(xs))));
+
+fun generate_dis (pref_r(x,xs)) = [disguise(pref_r(x,xs@[1])), disguise(pref_r(x,xs@[0])), disguise(pref_r(x,xs@[~1]))];
+
+fun dis_seq (x) = Cons(x , fn ()=> dis_seq (multiappend (map generate_dis (x))));
+
+
+fun compact_aux f pr = Cons(sierp_and_ls (map f head(dis_seq(pr))), fn () => (compact_aux f head(tail(dis_seq(pr)))));
+
+fun compact f pr = multi_sierp_or (compact_aux f pr);
+
+
+
+
+datatype lreal = lr of exreal opens;
+
+
+val pref_seq = dis_seq([pref_r(0,[~1]),pref_r(0,[0]),pref_r(0,[1])]);
+
+
+fun notEmpty_aux (cfo(x)) (Cons(p,pq)) = Cons((list_sierp_or (map x p)), fn ()=> (notEmpty_aux (cfo(x)) (pq())));
+
+fun notEmpty (cfo(x)) = notEmpty_aux (cfo(x)) pref_seq;
+
+(* z exist for (z-q<x) and (q<y) where x,y are lower reals  *)
+
+fun lr_sum (cfo(x)) (cfo(y)) = (cfo(fn a => (sierp_or (x a) (y a))));
+
+fun lr_mult (cfo(x)) q = (cfo(fn a => (x (r_div (a) (q)))));
+
+fun get_fun (cfo(x)) = x;
+
+fun oc2fun Cons(x,xq) = Cons(get_fun(x), fn ()=> (oc2fun (xq())));
+
+fun seq_apply Cons(x,xq) a = Cons((x a), fn ()=> (seq_apply (xq()) a) );
+
+fun lr_sup x = (cfo(fn a => multi_sierp_or (seq_apply (oc2fun(x)) (a))));
+

@@ -1,0 +1,109 @@
+datatype 'a opens = cfo of ('a -> Sierpinski);
+datatype 'a closed = cfc of ('a -> Sierpinski);
+
+fun opens_union (cfo(x)) (cfo(y)) = cfo (fn a => (sierp_or (x a) (y a))); 
+
+fun opens_intersection (cfo(x)) (cfo(y)) = (cfo(fn a => sierp_and (x a) (y a)));
+
+
+
+(* Hausdoff *)
+fun check1m1 (Cons(x,xq),Cons(y,yq)) = 
+	if x=1 
+	then if y= ~1 
+		then Cons(false, fn ()=> check1m1(xq(),yq()))
+		else c_true()
+	else c_true();
+
+fun check0m1 (Cons(x,xq),Cons(y,yq)) = 
+	if x=0 
+	then if y= ~1 
+		then Cons(false, fn ()=> check0m1(xq(),yq()))
+		else c_true()
+	else c_true();
+
+
+fun checkm1m1 (Cons(x,xq),Cons(y,yq)) = 
+	if x= ~1 
+	then if y= ~1 
+		then Cons(false, fn ()=> checkm1m1(xq(),yq()))
+		else c_true()
+	else c_true();
+
+
+fun check10 (Cons(x,xq),Cons(y,yq)) = 
+	if x=1 
+	then if y=0 
+		then Cons(false, fn ()=> check10(xq(),yq()))
+		else c_true()
+	else c_true();
+fun check00 (Cons(x,xq),Cons(y,yq)) = 
+	if x=0 
+	then if y=0 
+		then Cons(false, fn ()=> check00(xq(),yq()))
+		else c_true()
+	else c_true();
+fun checkm10 (Cons(x,xq),Cons(y,yq)) = 
+	if x= ~1 
+	then if y=0 
+		then Cons(false, fn ()=> check10(xq(),yq()))
+		else c_true()
+	else c_true();
+
+fun check11 (Cons(x,xq),Cons(y,yq)) = 
+	if x=1 
+	then if y= 1 
+		then Cons(false, fn ()=> check11(xq(),yq()))
+		else c_true()
+	else c_true();
+
+fun check01 (Cons(x,xq),Cons(y,yq)) = 
+	if x=0 
+	then if y= 1 
+		then Cons(false, fn ()=> check01(xq(),yq()))
+		else c_true()
+	else c_true();
+
+fun checkm11 (Cons(x,xq),Cons(y,yq)) = 
+	if x= ~1 
+	then if y= 1 
+		then Cons (false, fn ()=>checkm11(xq(),yq()))
+		else c_true()
+	else c_true();
+
+
+fun notEqual_seq (Cons(x,xq)) (Cons(y,yq)) = 
+	if x-y = 1 then Cons(false, fn ()=> notEqual_seq (xq()) (Cons(head(yq())-2, fn ()=> tail(yq()) ))) 
+	else if y-x = 1 then Cons(false, fn ()=> notEqual_seq (yq()) (Cons(head(xq())-2, fn ()=> tail(xq()) )))
+	else if x=y then Cons(false, fn ()=> notEqual_seq (xq()) (yq()))
+	else if x-y=2 then checkm11(xq(),yq())
+	else if y-x=2 then check1m1(xq(),yq())
+	else c_true();
+
+
+fun notEqual (R(ix,fx)) (R(iy,fy)) = 
+	if ix = iy then Sierp(notEqual_seq (fx) (fy))
+	else if ix-iy=2 then Sierp(checkm11(fx,fy))
+	else if iy-ix=2 then Sierp(check1m1(fx,fy))
+	else if ix-iy=1 then Sierp(notEqual_seq (fx) (Cons(head(fy)-2, fn ()=> tail(fy))))
+	else if iy-ix=1 then Sierp(notEqual_seq (fy) (Cons(head(fx)-2, fn ()=> tail(fx))))
+	else Sierp(c_true());
+
+fun checkm1 (Cons(x,xq)) = Cons(not(x=(~1)), fn ()=> checkm1 (xq()));
+
+fun check1 (Cons(x,xq)) = Cons(not(x=1), fn ()=> check1 (xq()));
+
+
+fun isPositive (R(0,Cons(x,xq))) = 
+	if x=0 then 
+		(Sierp(Cons(false,fn ()=> (sierp_extract_seq (isPositive (R(0,xq()))))))) 
+	else
+		if x=1 then 
+			(Sierp(checkm1 (xq()))) 
+		else (Sierp(c_false()))
+|	isPositive (R(1,f)) = (Sierp(checkm1 (f)))
+|	isPositive (R(i,f)) = 
+	if i>1 then 
+		(*mones*)
+		(Sierp(c_true()))
+	else (Sierp(c_false()));

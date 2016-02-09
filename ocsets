@@ -1,0 +1,110 @@
+(* Open Sets and Closed Sets and Hausdoff *)
+
+datatype 'a opens = cfo of ('a -> Sierpinski);
+
+datatype 'a closed = cfo of ('a -> Sierpinski);
+
+fun opens_union (cfo(x)) (cfo(y)) = (cfo(fn a=>sierp_or (x a) (y a))); 
+
+fun opens intersection (cfo(x)) (cfo(y)) = (cfo(fn a => sierp_and ((x a),(y a))));
+
+(* Hausdoff *)
+
+fun check1m1 (Cons(x,xq),Cons(y,yq)) = 
+	if x=1 
+	then if y= ~1 
+		then check1m1(xq(),yq())
+		else true
+	else true;
+
+fun check0m1 (Cons(x,xq),Cons(y,yq)) = 
+	if x=0 
+	then if y= ~1 
+		then check0m1(xq(),yq())
+		else true
+	else true;
+
+
+fun checkm1m1 (Cons(x,xq),Cons(y,yq)) = 
+	if x= ~1 
+	then if y= ~1 
+		then checkm1m1(xq(),yq())
+		else true
+	else true;
+
+
+fun check10 (Cons(x,xq),Cons(y,yq)) = 
+	if x=1 
+	then if y=0 
+		then check10(xq(),yq())
+		else true
+	else true;
+fun check00 (Cons(x,xq),Cons(y,yq)) = 
+	if x=0 
+	then if y=0 
+		then check00(xq(),yq())
+		else true
+	else true;
+fun checkm10 (Cons(x,xq),Cons(y,yq)) = 
+	if x= ~1 
+	then if y=0 
+		then checkm10(xq(),yq())
+		else true
+	else true;
+fun check11 (Cons(x,xq),Cons(y,yq)) = 
+	if x=1 
+	then if y= 1 
+		then check11(xq(),yq())
+		else true
+	else true;
+fun check01 (Cons(x,xq),Cons(y,yq)) = 
+	if x=0 
+	then if y= 1 
+		then check01(xq(),yq())
+		else true
+	else true;
+
+fun checkm11 (Cons(x,xq),Cons(y,yq)) = 
+	if x= ~1 
+	then if y= 1 
+		then checkm11(xq(),yq())
+		else true
+	else true;
+
+
+fun head (Cons(x,xq)) = x
+
+
+fun notEqual_seq (Cons(x,xq),Cons(x,yq)) = notEqual_seq (xq(),yp())
+|	notEqual_seq (Cons(1,xq),Cons(~1,yq)) = checkm11(xq(),yq())
+|	notEqual_seq (Cons(1,(fn ()=>Cons(1,xq))),Cons(0,yq)) = true
+|	notEqual_seq (Cons(1,fn ()=>Cons(0,xq)),Cons(0,yq)) = check01(xq(),yp())
+|	notEqual_seq (Cons(1,fn ()=>Cons(~1,xq)),Cons(0,yq)) = checkm10(xq(),yq())
+|	notEqual_seq (Cons(0,fn ()=>Cons(1,xq)),Cons(~1,yq)) = true
+|	notEqual_seq (Cons(0,fn ()=>Cons(0,xq)),Cons(~1,yq)) = check01(xq(),yp())
+|	notEqual_seq (Cons(0,fn ()=>Cons(~1,xq)),Cons(~1,yq)) = checkm10(xq(),yq())
+|	notEqual_seq (Cons(0,fn ()=>Cons(1,xq)),Cons(1,yq)) = check10(xq(),yq())
+|	notEqual_seq (Cons(0,fn ()=>Cons(0,xq)),Cons(1,yq)) = check01(xq(),yp())
+|	notEqual_seq (Cons(0,fn ()=>Cons(~1,xq)),Cons(1,yq)) = checkm10(xq(),yq())
+|	notEqual_seq (Cons(~1,xq),Cons(1,yq)) = check1m1(xq(),yq())
+|	notEqual_seq (Cons(~1,fn ()=>Cons(1,xq)),Cons(0,yq)) = check10(xq(),yq())
+|	notEqual_seq (Cons(~1,fn ()=>Cons(0,xq)),Cons(0,yq)) = check0m1(xq(),yp())
+|	notEqual_seq (Cons(~1,fn ()=>Cons(~1,xq)),Cons(0,yq)) = true;
+
+
+fun notEqual(R(ix,Cons(fx,fxq)),R(ix,Cons(fy,fyq))) = notEqual_seq (Cons(fx,fxq),Cons(fy,fyq))
+|	notEqual(R(ix,Cons(~1,fxq)),R(ix+1,Cons(fy,fyq))) = true
+|   notEqual(R(ix,Cons(0,fxq)),R(ix+1,Cons(fy,fyq))) = check01(fxq(),Cons(fy,fyq))
+|	notEqual(R(ix,Cons(1,fxq)),R(ix+1,Cons(fy,fyq))) = check10(fxq(),Cons(fy,fyq))
+|	notEqual(R(ix,Cons(1,fxq)),R(ix-1,Cons(fy,fyq))) = true
+|	notEqual(R(ix,Cons(0,fxq)),R(ix-1,Cons(fy,fyq))) = check01(fxq(),Cons(fy,fyq))
+|	notEqual(R(ix,Cons(~1,fxq)),R(ix-1,Cons(fy,fyq))) = checkm10(fxq,Cons(fy,fyq))
+|	notEqual(R(ix,fx),R(ix-2,fy)) = checkm11(fx,fy)
+|	notEqual(R(ix,fx),R(ix+2,fy)) = check1m1(fx,fy);
+
+
+
+
+
+
+

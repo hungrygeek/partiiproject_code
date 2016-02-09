@@ -1,0 +1,21 @@
+val a = r2exr 5.38 100;
+
+val a1 = exr2r a 100;
+
+val test_with_timer = 
+let val t = Timer.startCPUTimer()
+   in
+   (testadd 0.14 0.17 100, Time.toString(#usr(Timer.checkCPUTimer(t))) ^ "second")
+end;
+
+val test_with_timer = 
+let val t = Timer.startCPUTimer()
+   in
+   (testmult 0.8 0.9 2, Time.toString(#usr(Timer.checkCPUTimer(t))) ^ "second")
+end;
+
+val test_with_timer = 
+let val t = Timer.startCPUTimer()
+   in
+   (testdiv2 0.75 3, Time.toString(#usr(Timer.checkCPUTimer(t))) ^ "second")
+end;

@@ -1,0 +1,70 @@
+\begin{thebibliography}{10}
+
+\bibitem{mpfr}
+The {MPFR} library.
+\newblock http://www.mpfr.org/.
+
+\bibitem{poly}
+Poly/{ML} home page.
+\newblock http://www.polyml.org/.
+
+\bibitem{njml}
+Standard {ML} of {New Jersey}.
+\newblock http://www.smlnj.org/.
+
+\bibitem{blanck}
+Jens Blanck.
+\newblock Exact real arithmetic systems: Results of competition, 2000.
+
+\bibitem{gherardi4}
+Vasco Brattka, Guido Gherardi, and Alberto Marcone.
+\newblock The {B}olzano-{W}eierstrass {T}heorem is the jump of {W}eak
+  {K}\"onig's {L}emma.
+\newblock {\em Annals of Pure and Applied Logic}, 163(6):623--625, 2012.
+\newblock also arXiv:1101.0792.
+
+\bibitem{collins4}
+Pieter Collins.
+\newblock Computable stochastic processes.
+\newblock arXiv:1409.4667, 2014.
+
+\bibitem{peter}
+Abbas Edalat and Peter~John Potts.
+\newblock A new representation for exact real number.
+\newblock 1998.
+
+\bibitem{escardo}
+Martin Escard{\'o}.
+\newblock Synthetic topology of datatypes and classical spaces.
+\newblock {\em Electronic Notes in Theoretical Computer Science}, 87, 2004.
+
+\bibitem{john}
+John~K. Hunter.
+\newblock An introduction to real analysis, 2013.
+
+\bibitem{pauly-kawamura-arxiv}
+Akitoshi Kawamura and Arno Pauly.
+\newblock Function spaces for second-order polynomial time.
+\newblock arXiv 1401.2861, 2014.
+
+\bibitem{irram}
+Norbert~Th. M\"{u}ller.
+\newblock irram - exact arithmetic in {C}++.
+\newblock http://irram.uni-trier.de/.
+
+\bibitem{pauly-synthetic-arxiv}
+Arno Pauly.
+\newblock On the topological aspects of the theory of represented spaces.
+\newblock http://arxiv.org/abs/1204.3763, 2012.
+
+\bibitem{paulyziegler}
+Arno Pauly and Martin Ziegler.
+\newblock Relative computability and uniform continuity of relations.
+\newblock {\em Journal of Logic and Analysis}, 5, 2013.
+
+\bibitem{weihrauchd}
+Klaus Weihrauch.
+\newblock {\em Computable Analysis}.
+\newblock Springer-Verlag, 2000.
+
+\end{thebibliography}

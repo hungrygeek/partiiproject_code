@@ -1,0 +1,1035 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  14 MAY 2015 06:45
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**diss.tex
+(./diss.tex
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks14
+\verbatim@line=\toks15
+\verbatim@in@stream=\read1
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen103
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks17
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks18
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks26
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip49
+\LTright=\skip50
+\LTpre=\skip51
+\LTpost=\skip52
+\LTchunksize=\count100
+\LTcapwidth=\dimen112
+\LT@head=\box28
+\LT@firsthead=\box29
+\LT@foot=\box30
+\LT@lastfoot=\box31
+\LT@cols=\count101
+\LT@rows=\count102
+\c@LT@tables=\count103
+\c@LT@chunks=\count104
+\LT@p@ftn=\toks27
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count105
+\calc@Bcount=\count106
+\calc@Adimen=\dimen113
+\calc@Bdimen=\dimen114
+\calc@Askip=\skip53
+\calc@Bskip=\skip54
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
+\calc@Ccount=\count107
+\calc@Cskip=\skip55
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks28
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count108
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen115
+\Gin@req@width=\dimen116
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box32
+\AM@toc@title=\toks29
+\c@AM@survey=\count109
+\AM@templatesizebox=\box33
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amscd.sty
+Package: amscd 1999/11/29 v2.0
+\athelp@=\toks30
+\minaw@=\dimen117
+\bigaw@=\dimen118
+\minCDarrowwidth=\dimen119
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/epsf/epsf.tex
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read2
+\epsfframemargin=\dimen120
+\epsfframethickness=\dimen121
+\epsfrsize=\dimen122
+\epsftmp=\dimen123
+\epsftsize=\dimen124
+\epsfxsize=\dimen125
+\epsfysize=\dimen126
+\pspoints=\dimen127
+) (./diss.aux)
+\openout1 = `diss.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+\AtBeginShipoutBox=\box34
+
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count110
+\scratchdimen=\dimen128
+\scratchbox=\box35
+\nofMPsegments=\count111
+\nofMParguments=\count112
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count113
+\MPscratchDim=\dimen129
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
+\everyMPtoPDFconversion=\toks32
+) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+[1
+
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2
+
+]
+LaTeX Font Info:    Try loading font information for U+msa on input line 77.
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 77.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+] [2]
+[3] [4
+
+] (./diss.toc [5
+
+] [6])
+\tf@toc=\write3
+\openout3 = `diss.toc'.
+
+ [7] [8]
+Chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+[1
+
+
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 154.
+
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 154.
+ [2] [3]
+[4
+
+]
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--205
+
+ []
+
+[5
+
+] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
+
+ []
+
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 298--301
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 302--305
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--311
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--316
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--321
+
+ []
+
+[10] [11] [12]
+Chapter 3.
+[13
+
+
+]
+Overfull \hbox (32.66145pt too wide) in paragraph at lines 426--426
+[]      \OT1/cmtt/m/n/12 else Cons(1, fn ()=> r2ll (x- 1.0/Math.pow(2.0,i)) (n-
+1) (i+1.0));[] 
+ []
+
+
+Overfull \hbox (38.83646pt too wide) in paragraph at lines 428--428
+[]\OT1/cmtt/m/n/12 fun r2exr r n = (R(floor r, r2ll (r - Real.fromInt(floor r))
+ (n) (1.0)));[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 462--464
+
+ []
+
+[14]
+Underfull \vbox (badness 10000) detected at line 486
+ []
+
+[15] [16] [17]
+Overfull \hbox (20.31145pt too wide) in paragraph at lines 593--593
+[]\OT1/cmtt/m/n/12 |     eval_sierp_aux (Cons(false,xq)) n = eval_sierp_aux (xq
+()) (n-1);[] 
+ []
+
+
+Overfull \hbox (38.83646pt too wide) in paragraph at lines 605--605
+[]\OT1/cmtt/m/n/12 > fun interleave (Cons(x,xf), yq) = Cons(x, fn()=> interleav
+e(yq, xf())); 
+ []
+
+[18]
+Overfull \hbox (63.53647pt too wide) in paragraph at lines 623--623
+[]          \OT1/cmtt/m/n/12 sierp_extract_seq (sierp_and (Sierp(Cons(y,yf))) (
+Sierp(xf()))))));[] 
+ []
+
+
+Overfull \hbox (45.01146pt too wide) in paragraph at lines 639--639
+[]          \OT1/cmtt/m/n/12 interleave (sierp_extract_seq(multi_sierp_or (sf()
+)),(xq())))));[] 
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 680--683
+
+ []
+
+[20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--746
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 775--776
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 817--818
+
+ []
+
+[24] [25]
+Overfull \hbox (45.01146pt too wide) in paragraph at lines 890--890
+[]      \OT1/cmtt/m/n/12 let val temp = (last_ele xs) in (if temp=1 then [(pref
+_r(x,xs@[0]))][] 
+ []
+
+
+Overfull \hbox (45.01146pt too wide) in paragraph at lines 892--892
+[]         \OT1/cmtt/m/n/12 else [(pref_r(x,xs@[1])),(pref_r(x,xs@[0])),(pref_r
+(x,xs@[~1]))])[] 
+ []
+
+[26]
+Overfull \hbox (1.78644pt too wide) in paragraph at lines 927--927
+[]\OT1/cmtt/m/n/12 val findindex_f = fn: Sierpinski -> Sierpinski -> Sierpinski
+ -> int[] 
+ []
+
+
+Overfull \hbox (1.78644pt too wide) in paragraph at lines 935--935
+[]      \OT1/cmtt/m/n/12 Cons(temp, fn ()=> (admisibility_aux x (pref_r(i,f@[te
+mp]))))[] 
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 949--951
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 959--960
+
+ []
+
+
+Overfull \hbox (106.76149pt too wide) in paragraph at lines 963--963
+[]\OT1/cmtt/m/n/12 > fun singleton_inv f y = cfc_intsec_cpt (cfc (fn x => (notE
+qual y (f x)))) unitint; 
+ []
+
+
+Overfull \hbox (14.13644pt too wide) in paragraph at lines 964--964
+[]\OT1/cmtt/m/n/12 val singleton_inv = fn: (exreal -> exreal) -> exreal -> exre
+al cptset[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 977--979
+
+ []
+
+
+Overfull \hbox (32.66145pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/12 > fun testdiv2 y n = exr2r (inverse (fn x=> (rplus x x)) (r2
+exr y n)) n;[] 
+ []
+
+[28] [29] [30
+
+]
+Chapter 4.
+[31
+
+] <addres.png, id=151, 625.33624pt x 465.74pt>
+File: addres.png Graphic file (type png)
+ <use addres.png>
+Package pdftex.def Info: addres.png used on input line 1187.
+(pdftex.def)             Requested size: 411.93877pt x 306.8137pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 1187--1188
+[][] 
+ []
+
+[32] [33 <./addres.png>]
+Underfull \vbox (badness 10000) detected at line 1223
+ []
+
+[34]
+Underfull \vbox (badness 10000) detected at line 1264
+ []
+
+[35] <invres.png, id=167, 646.415pt x 450.68375pt>
+File: invres.png Graphic file (type png)
+ <use invres.png>
+Package pdftex.def Info: invres.png used on input line 1266.
+(pdftex.def)             Requested size: 411.93877pt x 287.20564pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 1266--1267
+[][] 
+ []
+
+[36 <./invres.png>] [37]
+Chapter 5.
+[38
+
+] [39] [40
+
+] (./diss.bbl [41
+
+]) [42]
+Appendix A.
+File: exreal.txt  (verbatim)
+
+Overfull \hbox (4.56721pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 |  r2ll x n i = if Real.signBit(x - 1.0/Math.pow(2.0,i)) then
+ Cons(0,fn ()=> r2ll x (n-1) (i+1.0))[] 
+ []
+
+[43
+
+
+]
+Overfull \hbox (132.06905pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 fun eval_result x = if (take(2,x) =[1,2] orelse take(2,x)=[~1
+,~2]) then Cons(0, fn()=>eval_result(Cons(0,fn ()=>tail(tail(x)))))[] 
+ []
+
+
+Overfull \hbox (76.81825pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if (take(3,x)=[1,1,1] orelse take(3,x)=[1,1,2]) then eva
+l_result(Cons(0, fn()=>Cons(~1,fn ()=>tail(tail(x)))))[] 
+ []
+
+
+Overfull \hbox (98.06856pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if (take(3,x)=[~1,~1,~1] orelse take(3,x)=[~1,~1,~2]) th
+en eval_result(Cons(0, fn()=>Cons(1,fn ()=>tail(tail(x)))))[] 
+ []
+
+
+Overfull \hbox (195.81996pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if (take(3,x)=[1,1,0] orelse (take(3,x)=[1,1,~1] orelse 
+take(3,x)=[1,1,~2])) then Cons(1, fn()=>eval_result(Cons(1,fn ()=>tail(tail(x))
+)))[] 
+ []
+
+
+Overfull \hbox (221.32033pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if (take(3,x)=[~1,~1,0] orelse (take(3,x)=[~1,~1,1] orel
+se take(3,x)=[~1,~1,2])) then Cons(~1, fn()=>eval_result(Cons(~1,fn ()=>tail(ta
+il(x)))))[] 
+ []
+
+
+Overfull \hbox (89.56844pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if (take(3,x)=[1,~1,~1] orelse take(3,x)=[1,~1,~2]) then
+ Cons(0, fn()=>eval_result(Cons(1,fn ()=>tail(tail(x)))))[] 
+ []
+
+
+Overfull \hbox (208.57014pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if (take(3,x)=[1,~1,0] orelse (take(3,x)=[1,~1,1] orelse
+ take(3,x)=[1,~1,2])) then Cons(1, fn()=>eval_result (Cons(~1,fn ()=>tail(tail(
+x)))))[] 
+ []
+
+
+Overfull \hbox (85.31837pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if (take(3,x) = [0,1,2] orelse take(3,x)=[0,1,1]) then C
+ons(1, fn()=>eval_result(Cons(~1,fn ()=>tail(tail(x)))))[] 
+ []
+
+
+Overfull \hbox (204.32008pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if (take(3,x) = [0,1,~2] orelse (take(3,x)=[0,1,~1] orel
+se take(3,x)=[0,1,0])) then Cons(0, fn()=>eval_result(Cons(1,fn ()=>tail(tail(x
+)))))[] 
+ []
+
+
+Overfull \hbox (102.31862pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if (take(3,x) = [0,~1,~2] orelse take(3,x)=[0,~1,~1]) th
+en Cons(~1, fn()=>eval_result(Cons(1,fn ()=>tail(tail(x)))))[] 
+ []
+
+
+Overfull \hbox (212.8202pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if (take(3,x) = [0,~1,2] orelse (take(3,x)=[0,~1,1] orel
+se take(3,x)=[0,~1,0])) then Cons(0, fn()=>eval_result(Cons(~1,fn ()=>tail(tail
+(x)))))[] 
+ []
+
+
+Overfull \hbox (85.31837pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if (take(3,x)=[~1,1,1] orelse take(3,x)=[~1,1,2]) then C
+ons(0, fn()=>eval_result(Cons(~1,fn ()=>tail(tail(x)))))[] 
+ []
+
+
+Overfull \hbox (217.07027pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if (take(3,x)=[~1,1,0] orelse (take(3,x)=[~1,1,~1] orels
+e take(3,x)=[~1,1,~2])) then Cons(0, fn()=>eval_result (Cons(~1,fn ()=>tail(tai
+l(x)))))[] 
+ []
+
+
+Overfull \hbox (140.56917pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if take(2,x) = [~1,2] then Cons(0, fn()=>eval_result (Co
+ns(0,fn ()=>tail(tail(x))))) else eval_result(Cons(0,fn()=>tail(x)));[] 
+ []
+
+
+Overfull \hbox (183.06978pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 if head(temp) = 2 orelse (take(2,temp)=[1,2] orelse (take(3,t
+emp)=[1,1,1] orelse take(3,temp)=[1,1,2])) then (R(x1+x2+1,eval_result (temp)))
+[] 
+ []
+
+
+Overfull \hbox (242.57063pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if head(temp) = ~2 orelse (take(2,temp)=[~1,~2] orelse (
+take(3,temp)=[~1,~1,~1] orelse take(3,temp)=[~1,~1,~2])) then (R(x1+x2-1,eval_r
+esult (temp)))[] 
+ []
+
+
+Overfull \hbox (144.81923pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 if head(temp) = 2 orelse (take(2,temp)=[1,2] orelse (take(3,t
+emp)=[1,1,1] orelse take(3,temp)=[1,1,2])) then (1,eval_result (temp))[] 
+ []
+
+
+Overfull \hbox (208.57014pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 else if head(temp) = ~2 orelse (take(2,temp)=[~1,~2] orelse (
+take(3,temp)=[~1,~1,~1] orelse take(3,temp)=[~1,~1,~2])) then (~1,eval_result (
+temp))[] 
+ []
+
+[44] [45]
+Overfull \hbox (132.06905pt too wide) in paragraph at lines 1319--1319
+[]\OT1/cmtt/m/n/8 fun rmult (R(i1,f1)) (R(i2,f2)) = rplus (R(i1*i2, mult_frac (
+f1) (f2))) (rplus (mult_frac_int i1 (f2)) (mult_frac_int i2 (f1)));[] 
+ []
+
+File: sierp.txt  (verbatim)
+
+Overfull \hbox (4.56721pt too wide) in paragraph at lines 1322--1322
+[]\OT1/cmtt/m/n/8 else (Sierp(Cons(false,fn ()=> sierp_extract_seq (sierp_and (
+Sierp(Cons(y,yf))) (Sierp(xf()))))));[] 
+ []
+
+
+Overfull \hbox (47.06783pt too wide) in paragraph at lines 1322--1322
+[]\OT1/cmtt/m/n/8 | sierp_and_ls (s::ss) = (Sierp(Cons(false, fn ()=> (sierp_ex
+tract_seq(sierp_and s ((sierp_and_ls ss)))))));[] 
+ []
+
+[46]
+Overfull \hbox (115.0688pt too wide) in paragraph at lines 1322--1322
+[]\OT1/cmtt/m/n/8 fun list_sierp_or ((Sierp(Cons(x,xq)))::xs) = Sierp(Cons(x,fn
+ ()=> (sierp_extract_seq(list_sierp_or (xs@[(Sierp(xq()))])))))[] 
+ []
+
+File: openclose.txt  (verbatim)
+[47]
+Overfull \hbox (4.56721pt too wide) in paragraph at lines 1325--1325
+[]\OT1/cmtt/m/n/8 if x-y = 1 then Cons(false, fn ()=> notEqual_seq (xq()) (Cons
+(head(yq())-2, fn ()=> tail(yq()) )))[] 
+ []
+
+
+Overfull \hbox (25.81752pt too wide) in paragraph at lines 1325--1325
+[]\OT1/cmtt/m/n/8 else if y-x = 1 then Cons(false, fn ()=> notEqual_seq (yq()) 
+(Cons(head(xq())-2, fn ()=> tail(xq()) )))[] 
+ []
+
+[48]
+File: compact.txt  (verbatim)
+
+Overfull \hbox (34.31764pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 fun sierp_c (Sierp(Cons(true,xq))) = (Sierp(Cons(false,fn ()=
+>sierp_extract_seq (sierp_c(Sierp(xq()))))))[] 
+ []
+
+
+Overfull \hbox (30.06758pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 | sierp_c (Sierp(Cons(false,xq))) = (Sierp(Cons(true,fn ()=>s
+ierp_extract_seq (sierp_c(Sierp(xq()))))));[] 
+ []
+
+
+Overfull \hbox (110.81874pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 fun cfc_intsec_cpt (f) (cpt(cfo(x : (('a opens)->Sierpinski))
+)) = (cpt(cfo(fn a => (x (opens_union (complementc(f)) a)))));[] 
+ []
+
+[49]
+Overfull \hbox (208.57014pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 else ((Sierp(Cons(false,fn ()=> (sierp_extract_seq((handle_au
+x (Sierp(tail(sierp_extract_seq(x)))))) handle Do_not_Look => (c_false())))    
+ )) );[] 
+ []
+
+
+Overfull \hbox (98.06856pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 fun generate_dis (pref_r(x,xs)) = [disguise(pref_r(x,xs@[1]))
+, disguise(pref_r(x,xs@[0])), disguise(pref_r(x,xs@[~1]))];[] 
+ []
+
+
+Overfull \hbox (8.81728pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 fun generate_pref1 (pref_r(x,xs)) = if (last_ele xs)=1 then [
+(pref_r(x,xs@[1])),(pref_r(x,xs@[0]))][] 
+ []
+
+
+Overfull \hbox (8.81728pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 fun dis_seq (x) = Cons((map disguise (x)) , fn ()=> dis_seq (
+multiappend (map generate_pref (x))));[] 
+ []
+
+
+Overfull \hbox (85.31837pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 fun compact_aux f x = Cons((handle_aux (sierp_and_ls (map (au
+xf f) (head(x))))), fn () => (compact_aux f (tail(x))));[] 
+ []
+
+[50]
+Overfull \hbox (106.56868pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 then (print_prefixreal(x);(if (xs=[]) then (Sierp(c_true())) 
+else (compact1 f xs (fn () => (f (disguise (headls(xs))))))))[] 
+ []
+
+
+Overfull \hbox (170.3196pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 else (Sierp(Cons(false, fn ()=> (sierp_extract_seq(compact1 f
+ (x::xs) (fn () => (Sierp((tail(sierp_extract_seq(x_result())))))))))))    )[] 
+
+ []
+
+
+Overfull \hbox (336.07198pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 handle Do_not_Look => (print("");(Sierp(Cons(false, fn ()=> (
+sierp_extract_seq(compact1 f (xs@(generate_pref x)) (fn () => (f (disguise (hea
+dls(xs@(generate_pref x))))))))))));[] 
+ []
+
+
+Overfull \hbox (4.56721pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 then if (xs=[]) then (Sierp(c_true())) else (compact1 f xs (f
+n () => (f (disguise (headls(xs))))))[] 
+ []
+
+
+Overfull \hbox (170.3196pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 else (Sierp(Cons(false, fn ()=> (sierp_extract_seq(compact1 f
+ (x::xs) (fn () => (Sierp((tail(sierp_extract_seq(x_result())))))))))))    )[] 
+
+ []
+
+
+Overfull \hbox (285.07124pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 handle Do_not_Look => (Sierp(Cons(false, fn ()=> (sierp_extra
+ct_seq(compact1 f (xs@(generate_pref x)) (fn () => (f (disguise (headls(xs@(gen
+erate_pref x)))))))))));[] 
+ []
+
+
+Overfull \hbox (4.56721pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 then if (xs=[]) then (Sierp(c_true())) else (compact1 f xs (f
+n () => (f (disguise (headls(xs))))))[] 
+ []
+
+
+Overfull \hbox (170.3196pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 else (Sierp(Cons(false, fn ()=> (sierp_extract_seq(compact1 f
+ (x::xs) (fn () => (Sierp((tail(sierp_extract_seq(x_result())))))))))))    )[] 
+
+ []
+
+
+Overfull \hbox (293.57137pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 handle Do_not_Look => (Sierp(Cons(false, fn ()=> (sierp_extra
+ct_seq(compact1 f (xs@(generate_pref1 x)) (fn () => (f (disguise (headls(xs@(ge
+nerate_pref1 x)))))))))));[] 
+ []
+
+
+Overfull \hbox (4.56721pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 then if (xs=[]) then (Sierp(c_true())) else (compact1 f xs (f
+n () => (f (disguise (headls(xs))))))[] 
+ []
+
+
+Overfull \hbox (170.3196pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 else (Sierp(Cons(false, fn ()=> (sierp_extract_seq(compact1 f
+ (x::xs) (fn () => (Sierp((tail(sierp_extract_seq(x_result())))))))))))    )[] 
+
+ []
+
+
+Overfull \hbox (293.57137pt too wide) in paragraph at lines 1328--1328
+[]\OT1/cmtt/m/n/8 handle Do_not_Look => (Sierp(Cons(false, fn ()=> (sierp_extra
+ct_seq(compact1 f (xs@(generate_pref2 x)) (fn () => (f (disguise (headls(xs@(ge
+nerate_pref2 x)))))))))));[] 
+ []
+
+[51]
+File: adm.txt  (verbatim)
+ [52]
+Overfull \hbox (106.56868pt too wide) in paragraph at lines 1331--1331
+[]\OT1/cmtt/m/n/8 (* cl stands for current list, ll stands for current list len
+gth, ci stands for current index, which is what we wanted. *)[] 
+ []
+
+
+Overfull \hbox (110.81874pt too wide) in paragraph at lines 1331--1331
+[]\OT1/cmtt/m/n/8 = if x=true then 1 else if y=true then 0 else if z=true then 
+~1 else findindex_f (Sierp(xf())) (Sierp(yf())) (Sierp(zf()));[] 
+ []
+
+
+Overfull \hbox (255.32082pt too wide) in paragraph at lines 1331--1331
+[]\OT1/cmtt/m/n/8 val temp = (findindex_f (x (make_pref_interval((pref_r(i,f@[1
+]))))) (x (make_pref_interval((pref_r(i,f@[0]))))) (x (make_pref_interval((pref
+_r(i,f@[~1]))))))[] 
+ []
+
+[53] [54
+
+]
+Appendix B.
+<proposal.pdf, id=231, 597.51233pt x 845.0471pt>
+File: proposal.pdf Graphic file (type pdf)
+ <use proposal.pdf>
+Package pdftex.def Info: proposal.pdf used on input line 1339.
+(pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
+File: proposal.pdf Graphic file (type pdf)
+
+<use proposal.pdf>
+Package pdftex.def Info: proposal.pdf used on input line 1339.
+(pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
+ [55
+
+]
+<proposal.pdf, id=237, page=1, 597.51233pt x 845.0471pt>
+File: proposal.pdf Graphic file (type pdf)
+
+<use proposal.pdf, page 1>
+Package pdftex.def Info: proposal.pdf, page1 used on input line 1339.
+(pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
+File: proposal.pdf Graphic file (type pdf)
+ <use proposal.pdf, page 1>
+Package pdftex.def Info: proposal.pdf, page1 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+File: proposal.pdf Graphic file (type pdf)
+
+<use proposal.pdf, page 1>
+Package pdftex.def Info: proposal.pdf, page1 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+File: proposal.pdf Graphic file (type pdf)
+ <use proposal.pdf, page 1>
+Package pdftex.def Info: proposal.pdf, page1 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+File: proposal.pdf Graphic file (type pdf)
+
+<use proposal.pdf, page 1>
+Package pdftex.def Info: proposal.pdf, page1 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+ [56 <./proposal.pdf>]
+<proposal.pdf, id=260, page=2, 597.51233pt x 845.0471pt>
+File: proposal.pdf Graphic file (type pdf)
+
+<use proposal.pdf, page 2>
+Package pdftex.def Info: proposal.pdf, page2 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+File: proposal.pdf Graphic file (type pdf)
+ <use proposal.pdf, page 2>
+Package pdftex.def Info: proposal.pdf, page2 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+File: proposal.pdf Graphic file (type pdf)
+
+<use proposal.pdf, page 2>
+Package pdftex.def Info: proposal.pdf, page2 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+ [57 <./proposal.pdf>]
+<proposal.pdf, id=269, page=3, 597.51233pt x 845.0471pt>
+File: proposal.pdf Graphic file (type pdf)
+
+<use proposal.pdf, page 3>
+Package pdftex.def Info: proposal.pdf, page3 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+File: proposal.pdf Graphic file (type pdf)
+ <use proposal.pdf, page 3>
+Package pdftex.def Info: proposal.pdf, page3 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+File: proposal.pdf Graphic file (type pdf)
+
+<use proposal.pdf, page 3>
+Package pdftex.def Info: proposal.pdf, page3 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+ [58 <./proposal.pdf>]
+<proposal.pdf, id=273, page=4, 597.51233pt x 845.0471pt>
+File: proposal.pdf Graphic file (type pdf)
+
+<use proposal.pdf, page 4>
+Package pdftex.def Info: proposal.pdf, page4 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+File: proposal.pdf Graphic file (type pdf)
+ <use proposal.pdf, page 4>
+Package pdftex.def Info: proposal.pdf, page4 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+File: proposal.pdf Graphic file (type pdf)
+
+<use proposal.pdf, page 4>
+Package pdftex.def Info: proposal.pdf, page4 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+ [59 <./proposal.pdf>]
+<proposal.pdf, id=277, page=5, 597.51233pt x 845.0471pt>
+File: proposal.pdf Graphic file (type pdf)
+
+<use proposal.pdf, page 5>
+Package pdftex.def Info: proposal.pdf, page5 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+File: proposal.pdf Graphic file (type pdf)
+ <use proposal.pdf, page 5>
+Package pdftex.def Info: proposal.pdf, page5 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+File: proposal.pdf Graphic file (type pdf)
+
+<use proposal.pdf, page 5>
+Package pdftex.def Info: proposal.pdf, page5 used on input line 1339.
+(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
+ [60 <./proposal.pdf>] (./diss.aux) ) 
+Here is how much of TeX's memory you used:
+ 4081 strings out of 493117
+ 55472 string characters out of 6135432
+ 141352 words of memory out of 5000000
+ 7439 multiletter control sequences out of 15000+600000
+ 15713 words of font info for 60 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 40i,18n,46p,1294b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsl12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ti12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
+2.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.
+pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
+m10.pfb>
+Output written on diss.pdf (70 pages, 457450 bytes).
+PDF statistics:
+ 347 PDF objects out of 1000 (max. 8388607)
+ 235 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+

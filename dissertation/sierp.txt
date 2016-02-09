@@ -1,0 +1,34 @@
+datatype Sierpinski = Sierp of bool seq;
+fun c_true () = Cons(true, fn ()=>c_true());
+fun c_false () = Cons(false, fn ()=>c_false());
+
+fun sierp_extract_seq (Sierp(x)) = x;
+
+fun interleave (Cons(x,xf), yq) = Cons(x, fn()=> interleave(yq, xf()));
+
+fun sierp_or (Sierp(a)) (Sierp(b)) = Sierp(interleave(a,b));
+
+fun sierp_and (Sierp(Cons(x,xf))) (Sierp(Cons(y,yf))) = 
+	if x=true then (Sierp(Cons(y,yf)))
+	else (Sierp(Cons(false,fn ()=> sierp_extract_seq (sierp_and (Sierp(Cons(y,yf))) (Sierp(xf()))))));
+
+
+fun sierp_and_ls [] = (Sierp(c_true()))
+|	sierp_and_ls (s::ss) = (Sierp(Cons(false, fn ()=> (sierp_extract_seq(sierp_and s ((sierp_and_ls ss)))))));
+
+
+fun sierp_is_top (Sierp(Cons(x,xq))) = 
+	if x = true 
+	then true 
+	else sierp_is_top (Sierp(xq()));
+
+fun append ([],ys) = ys
+	| append (x::xs,ys) = x::append(xs,ys);
+
+fun multi_sierp_or (Cons((Sierp(Cons(x,xq))),sf)) = 
+	if x = true
+	then (Sierp(c_true()))
+	else (Sierp(Cons(false, fn()=>interleave (sierp_extract_seq(multi_sierp_or (sf())),(xq())) )));
+
+fun list_sierp_or ((Sierp(Cons(x,xq)))::xs) = Sierp(Cons(x,fn ()=> (sierp_extract_seq(list_sierp_or (xs@[(Sierp(xq()))])))))
+|	list_sierp_or [] = Sierp(c_false());

@@ -1,0 +1,67 @@
+datatype prefix_real = pref_r of int * int list;
+datatype Interval = I of exreal * exreal;
+
+fun makeinterval (I(l,r)) = cfo(fn z => 
+								(let val a = (isPositive ((rplus (z) (r_minus(l))))) in
+									let val b = (isPositive ((rplus (r) (r_minus(z))))) in
+										(sierp_and (a) (b))
+									end
+								end)
+							);
+
+fun get(0,xq) = []
+| 	get(n,Cons(x,xf)) = x :: get(n-1,xf());
+
+
+fun exr2pref (R(i,f)) n = pref_r(i,get(n,f));
+
+fun list2lazym1 [] = mones()
+|	list2lazym1 (x::xs) = Cons(x, fn()=>(list2lazym1 xs) );
+
+fun list2lazy1 [] = ones()
+|	list2lazy1 (x::xs) = Cons(x, fn()=>(list2lazy1 xs) );
+
+fun pref2exrm1 (pref_r(i,f)) = (R(i,(list2lazym1 f)));
+fun pref2exr1 (pref_r(i,f)) = (R(i,(list2lazy1 f)));
+
+fun make_pref_interval x = makeinterval (I((pref2exrm1 x),(pref2exr1 x)));
+
+(*map interval *)
+fun table(n) = Cons(makeinterval( I((R(n-1,zeros())),(R(n+1,zeros())))), fn ()=> table(n+1));
+
+fun mapq f (Cons(x,xq)) = (Cons(f x, fn ()=> (mapq f (xq()))));
+
+(*find index for interger part*)
+fun map f [] = [] 
+|	map f (x::xs) = (f x) :: (map f xs);
+
+fun take_head (Sierp(Cons(x,xf))) = x;
+
+fun checktrue [] n = ~1
+|	checktrue (x::xs) n = if x=true then n else checktrue xs (n+1);
+
+fun index_list x = checktrue (map take_head x) 0;
+
+(* cl stands for current list, ll stands for current list length, ci stands for current index, which is what we wanted. *)
+fun findindex_i (Cons(Sierp(Cons(x,xf)), sf)) cl ci = 
+	if x=true then ci else
+		if index_list cl = ~1 then 
+		findindex_i (sf()) (cl@[Sierp(xf())]) (ci+1)
+		else index_list cl; 
+
+fun findindex_f (Sierp(Cons(x,xf))) (Sierp(Cons(y,yf))) (Sierp(Cons(z,zf)))
+	= if x=true then 1 else if y=true then 0 else if z=true then ~1 else findindex_f (Sierp(xf())) (Sierp(yf())) (Sierp(zf()));
+
+fun admisibility_aux x (pref_r(i,f)) = 
+	let 
+	val temp = (findindex_f (x (make_pref_interval((pref_r(i,f@[1]))))) (x (make_pref_interval((pref_r(i,f@[0]))))) (x (make_pref_interval((pref_r(i,f@[~1]))))))
+	in
+		Cons(temp, fn ()=> (admisibility_aux x (pref_r(i,f@[temp]))))
+	end;
+
+fun singleton x = (cpt(cfo (fn u=> ((getf u) x))));
+
+
+fun admisibility1 (cpt(cfo(x))) = (R(0, (admisibility_aux (x) (pref_r(0,[])))));
+
+fun testcase (cpt(cfo(x))) = x (make_pref_interval((pref_r(0,[1]))));

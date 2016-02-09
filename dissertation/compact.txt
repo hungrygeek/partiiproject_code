@@ -1,0 +1,120 @@
+datatype 'a cptset = cpt of (('a opens) opens);
+
+fun sierp_c (Sierp(Cons(true,xq))) = (Sierp(Cons(false,fn ()=>sierp_extract_seq (sierp_c(Sierp(xq()))))))
+|	sierp_c (Sierp(Cons(false,xq))) = (Sierp(Cons(true,fn ()=>sierp_extract_seq (sierp_c(Sierp(xq()))))));
+
+fun complementc (cfc(x)) = (cfo(x));
+
+fun complemento (cfo(x)) = (cfc(x));
+
+fun cfc_intsec_cpt (f) (cpt(cfo(x : (('a opens)->Sierpinski)))) = (cpt(cfo(fn a => (x (opens_union (complementc(f)) a)))));
+
+exception Do_not_Look;
+
+fun handle_aux x = if head(sierp_extract_seq x)=true then (Sierp(c_true()))
+					else ((Sierp(Cons(false,fn ()=> (sierp_extract_seq((handle_aux (Sierp(tail(sierp_extract_seq(x)))))) handle Do_not_Look => (c_false())))     )) );
+
+fun auxf f = (fn x => (f x handle Do_not_Look=> (Sierp(c_false()))));
+
+fun multiappend [] = []
+|	multiappend (x::xs) = x@(multiappend xs);
+
+fun disguise_aux (x::xs) = Cons(x,fn ()=> disguise_aux xs)
+|	disguise_aux [] = raise Do_not_Look;
+
+fun disguise (pref_r(x,xs)) = (R(x,(disguise_aux(xs))));
+
+fun generate_dis (pref_r(x,xs)) = [disguise(pref_r(x,xs@[1])), disguise(pref_r(x,xs@[0])), disguise(pref_r(x,xs@[~1]))];
+fun generate_pref (pref_r(x,xs)) = [(pref_r(x,xs@[1])),(pref_r(x,xs@[0])),(pref_r(x,xs@[~1]))];
+
+
+fun last_ele [] = 0
+|	last_ele (x::xs) = if xs=[] then x else last_ele xs;
+fun generate_pref1 (pref_r(x,xs)) = if (last_ele xs)=1 then [(pref_r(x,xs@[1])),(pref_r(x,xs@[0]))]
+	else if (last_ele xs)= (~1) then [(pref_r(x,xs@[~1])),(pref_r(x,xs@[0]))]
+	else [(pref_r(x,xs@[1])),(pref_r(x,xs@[0])),(pref_r(x,xs@[~1]))];
+
+
+fun generate_pref2 (pref_r(x,xs)) = 
+	let val temp = (last_ele xs) in (if temp=1 then [(pref_r(x,xs@[0]))]
+		else if temp= (~1) then [(pref_r(x,xs@[0]))]
+			else [(pref_r(x,xs@[1])),(pref_r(x,xs@[0])),(pref_r(x,xs@[~1]))])
+	end;
+
+
+
+
+
+fun dis_seq (x) = Cons((map disguise (x)) , fn ()=> dis_seq (multiappend (map generate_pref (x))));
+
+val pr = dis_seq([(pref_r(0,[0])),(pref_r(0,[1])),(pref_r(0,[~1]))]);
+
+(*fun aux_f f = (fn x =>(handle_aux (f x)));*)
+
+fun compact_aux f x = Cons((handle_aux (sierp_and_ls (map (auxf f) (head(x))))), fn () => (compact_aux f (tail(x))));
+
+fun compact f x = multi_sierp_or (compact_aux f x);
+
+fun admisibility (cpt(cfo(x))) = 
+
+	let val temp = (findindex_i (mapq x (table(1))) [] 1) in
+
+		(R(temp, (admisibility_aux (x) (pref_r(temp,[])))))
+	end;
+
+
+fun headls (x::xs) =x;
+fun taills [] =[]
+|	taills (x::xs) = xs;
+
+
+(*
+fun compact1 f [] _ = (print("base case");(Sierp(c_true())))
+|	compact1 f (x::xs) x_result = 
+			(if (head(sierp_extract_seq(x_result()))) = true
+				then (print_prefixreal(x);(if (xs=[]) then (Sierp(c_true())) else (compact1 f xs (fn () => (f (disguise (headls(xs))))))))
+			else (Sierp(Cons(false, fn ()=> (sierp_extract_seq(compact1 f (x::xs) (fn () => (Sierp((tail(sierp_extract_seq(x_result())))))))))))    )
+			handle Do_not_Look => (print("");(Sierp(Cons(false, fn ()=> (sierp_extract_seq(compact1 f (xs@(generate_pref x)) (fn () => (f (disguise (headls(xs@(generate_pref x))))))))))));
+*)
+
+fun print_list [] = print("   ")
+| print_list (x::xs) = (print(Int.toString(x));print_list(xs));
+fun print_prefixreal (pref_r(i,f)) = print_list(f);
+
+
+
+
+fun compact1 f [] _ = (Sierp(c_true()))
+|	compact1 f (x::xs) x_result = 
+			(if (head(sierp_extract_seq(x_result()))) = true
+				then if (xs=[]) then (Sierp(c_true())) else (compact1 f xs (fn () => (f (disguise (headls(xs))))))
+			else (Sierp(Cons(false, fn ()=> (sierp_extract_seq(compact1 f (x::xs) (fn () => (Sierp((tail(sierp_extract_seq(x_result())))))))))))    )
+			handle Do_not_Look => (Sierp(Cons(false, fn ()=> (sierp_extract_seq(compact1 f (xs@(generate_pref x)) (fn () => (f (disguise (headls(xs@(generate_pref x)))))))))));
+
+
+
+
+
+fun compact2 f [] _ = (Sierp(c_true()))
+|	compact2 f (x::xs) x_result = 
+			(if (head(sierp_extract_seq(x_result()))) = true
+				then if (xs=[]) then (Sierp(c_true())) else (compact1 f xs (fn () => (f (disguise (headls(xs))))))
+			else (Sierp(Cons(false, fn ()=> (sierp_extract_seq(compact1 f (x::xs) (fn () => (Sierp((tail(sierp_extract_seq(x_result())))))))))))    )
+			handle Do_not_Look => (Sierp(Cons(false, fn ()=> (sierp_extract_seq(compact1 f (xs@(generate_pref1 x)) (fn () => (f (disguise (headls(xs@(generate_pref1 x)))))))))));
+
+
+fun compact3 f [] _ = (Sierp(c_true()))
+|	compact3 f (x::xs) x_result = 
+			(if (head(sierp_extract_seq(x_result()))) = true
+				then if (xs=[]) then (Sierp(c_true())) else (compact1 f xs (fn () => (f (disguise (headls(xs))))))
+			else (Sierp(Cons(false, fn ()=> (sierp_extract_seq(compact1 f (x::xs) (fn () => (Sierp((tail(sierp_extract_seq(x_result())))))))))))    )
+			handle Do_not_Look => (Sierp(Cons(false, fn ()=> (sierp_extract_seq(compact1 f (xs@(generate_pref2 x)) (fn () => (f (disguise (headls(xs@(generate_pref2 x)))))))))));
+
+
+
+
+
+
+fun compact_new f = compact1 f [(pref_r(0,[]))] (fn () => (f (disguise (pref_r(0,[]))))); 
+fun compact_new1 f = compact2 f [(pref_r(0,[]))] (fn () => (f (disguise (pref_r(0,[]))))); 
+fun compact_new2 f = compact3 f [(pref_r(0,[]))] (fn () => (f (disguise (pref_r(0,[]))))); 
